@@ -8,7 +8,7 @@ The original_data under the kodak folder is 22 original images in the kodak data
 The files drive.py and sample1.py are codes for calling the BPG encoder + LDPC encoding, channel transmission + LDPC decoding + BPG decoding for a single image. 
 The files show_bpg_numpy.py and bpgdec_by_psnr.py are for all images in a folder. 
 
-Perform the operations of fully automatic PG encoder call + LDPC encoding, channel transmission + LDPC decoding + BPG decoding. After running bpgdec_by_psnr.py, the calculated average psnr value will be displayed.
+Perform the operations of fully automatic BPG encoder call + LDPC encoding, channel transmission + LDPC decoding + BPG decoding. After running bpgdec_by_psnr.py, the calculated average psnr value will be displayed.
 
 ldpc channel coding is very abstract. The text message source I used at the beginning found that the effect was not good. Later I found that n=50 k=22 is probably a more reasonable range. Both the decoding time and the final result are relatively good. Here It feels like the optimized selection can be made as an undergraduate program.
 

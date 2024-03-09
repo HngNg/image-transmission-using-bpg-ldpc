@@ -10,7 +10,7 @@ def unpickle(file):
         dict = pickle.load(fo, encoding='bytes')
     return dict
 
-data_dir = "cifar-10-batches-py"  # Adjust if needed
+data_dir = "./cifar-10-batches-py"  # Adjust if needed
 output_dir = "./bpgmaster/cifar10/original_data/"  # Adjust if needed
 
 os.makedirs(output_dir, exist_ok=True)  # Create output directory 

@@ -11,15 +11,15 @@ def calculate_psnr(img1, img2):
     psnr = 10 * np.log10(max_pixel**2 / mse)
     return psnr
 
-root_dir = 'D:\\bpgmaster\\kodak\\original_data\\'
-total_psnr = 0  # 用于累加 PSNR 的变量
-image_count = 0  # 记录图像数量的变量
+root_dir = './bpgmaster/cifar10/original_data/'
+total_psnr = 0  # Variable used to accumulate PSNR
+image_count = 0  # Variable to record the number of images
 
-for item in os.listdir(root_dir):   # 遍历 root_dir
+for item in os.listdir(root_dir):   # Traverse root_dir
     image_count += 1
     name = root_dir + item
-    save_dir = 'D:\\bpgmaster\\kodak\\encode\\'   # 存储编码结果
-    save_dir1 = 'D:\\bpgmaster\\kodak\\ldpc_decode\\'   # 存储解码结果
+    save_dir = './bpgmaster/cifar10/encode/'   # Store encoding results
+    save_dir1 = './bpgmaster/cifar10/ldpc_decode/'   # Store decoding results
 
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
@@ -31,11 +31,11 @@ for item in os.listdir(root_dir):   # 遍历 root_dir
     compressed_img  = cv2.imread(save_dir1 + item.split('.')[0] + '.png' , cv2.IMREAD_GRAYSCALE)
     original_img= cv2.imread(root_dir + item.split('.')[0] + '.png', cv2.IMREAD_GRAYSCALE)
 
-    # 计算 PSNR
+    # Calculate PSNR
     psnr = calculate_psnr(original_img, compressed_img)
     total_psnr += psnr
     print(f"PSNR: {psnr}")
 
-# 计算平均 PSNR
+# Calculate avg PSNR
 average_psnr = total_psnr / image_count
 print(f"平均 PSNR: {average_psnr}")

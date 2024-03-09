@@ -1,13 +1,16 @@
 # **version 0.0**
+(English Ver.)
 
-本项目用于windows系统下实现bpg和ldpc的图像压缩传输。其中bpg编解码器采用github上的第三方库实现，[具体可以参考](https://github.com/mirrorer/libbpg)。ldpc编码采用的库是[pyldpc](https://pypi.org/project/pyldpc/)，直接pip就行了
-使用的图片数据我存在onedrive里就是kodak数据集下载完直接丢在根目录下就行了（https://1drv.ms/f/s!As298sdrMHIMi02lVHxHsW9YUMuu?e=teh1F1）
-kodak文件夹下的original_data为kodak数据集原始图像中的22张，还有两张俺之前忘记放了就懒得补了。。。
+This project is used to realize image compression and transmission of bpg and ldpc under windows system. The bpg codec is implemented using a third-party library on github, [for details, please refer to](https://github.com/mirrorer/libbpg). The library used for ldpc encoding is [pyldpc](https://pypi.org/project/pyldpc/), just pip directly.
+The image data I use is stored in onedrive. After downloading the kodak data set, just drop it in the root directory (https://1drv.ms/f/s!As298sdrMHIMi02lVHxHsW9YUMuu?e=teh1F1)
+The original_data under the kodak folder is 22 original images in the kodak data set. There are two more that I forgot to put in before and I am too lazy to add them. . .
 
-文件drive.py和sample1.py为单张图像的BPG编码器调用+LDPC编码、信道传输+LDPC解码+BPG解码调用的代码，文件show_bpg_numpy.py和bpgdec_by_psnr.py是针对某个文件夹下所有图像进行全自动PG编码器调用+LDPC编码、信道传输+LDPC解码+BPG解码的操作，其中bpgdec_by_psnr.py运行之后会展示计算出的平均psnr值。
+The files drive.py and sample1.py are codes for calling the BPG encoder + LDPC encoding, channel transmission + LDPC decoding + BPG decoding for a single image. 
+The files show_bpg_numpy.py and bpgdec_by_psnr.py are for all images in a folder. 
 
-ldpc信道编码这个东西很抽象，我一开始用的短信源发现效果不好捏，后面发现n=50 k=22 大概是个比较合理的区间，不论是解码时间还是最后的结果都较为不错，这里面的优化选择感觉可以搞个本科毕设出来。
+Perform the operations of fully automatic PG encoder call + LDPC encoding, channel transmission + LDPC decoding + BPG decoding. After running bpgdec_by_psnr.py, the calculated average psnr value will be displayed.
+
+ldpc channel coding is very abstract. The text message source I used at the beginning found that the effect was not good. Later I found that n=50 k=22 is probably a more reasonable range. Both the decoding time and the final result are relatively good. Here It feels like the optimized selection can be made as an undergraduate program.
 
 
-
-后续会尝试更新一下更规范的版本，现在直接把代码一窝蜂丢进编解码器的根目录下忙着写中期报告懒得倒腾了
+I will try to update a more standardized version in the future. Now I just throw the code into the root directory of the codec and I am too busy writing a mid-term report to bother with it.

@@ -16,7 +16,7 @@ for item in os.listdir(root_dir):   # 遍历root_dir
         #if not os.path.exists(save_dir1):
         #    os.makedirs(save_dir1)
 
-        os.system('.\\bpgenc -m 1 -b 8 -q 35 ' + name + ' -o ' + save_dir + item.split('.')[0] + '.bin')
+        os.system('.\\bpgenc.exe -m 1 -b 8 -q 35 ' + name + ' -o ' + save_dir + item.split('.')[0] + '.bin')
         print(name)
         with open(save_dir+item.split('.')[0]+'.bin', 'rb') as f:
             data = np.unpackbits(np.fromfile(f, dtype=np.uint8))

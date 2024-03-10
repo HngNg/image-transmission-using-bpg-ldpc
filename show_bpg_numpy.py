@@ -7,7 +7,7 @@ root_dir = './bpgmaster/cifar10/original_data/'
 for item in os.listdir(root_dir):   # 遍历root_dir
         name = root_dir + item
         # Store the encoding results and replace it with your own directory. It is recommended to use the complete route.
-        save_dir = './bpgmaster/cifar10/encode'   
+        save_dir = './bpgmaster/cifar10/encode/'   
         #save_dir1 = './bpgmaster/cifar10/decode/'   # Store decoding results
 
         if not os.path.exists(save_dir):
@@ -16,7 +16,7 @@ for item in os.listdir(root_dir):   # 遍历root_dir
         #if not os.path.exists(save_dir1):
         #    os.makedirs(save_dir1)
 
-        os.system('.\\bpgenc.exe -m 1 -b 8 -q 35 ' + name + ' -o ' + save_dir + item.split('.')[0] + '.bin')
+        os.system('bpgenc.exe -m 1 -b 8 -q 35 ' + name + ' -o ' + save_dir + item.split('.')[0] + '.bin')
         print(name)
         with open(save_dir+item.split('.')[0]+'.bin', 'rb') as f:
             data = np.unpackbits(np.fromfile(f, dtype=np.uint8))

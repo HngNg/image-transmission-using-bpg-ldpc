@@ -27,7 +27,7 @@ for item in os.listdir(root_dir):   # Traverse root_dir
     if not os.path.exists(save_dir1):
         os.makedirs(save_dir1)
 
-    os.system('.\\bpgdec.exe -o ' + save_dir1 + item.split('.')[0] + '.png' + ' ' + save_dir + item.split('.')[0] + '.bin')
+    os.system('bpgdec.exe -o ' + save_dir1 + item.split('.')[0] + '.png' + ' ' + save_dir + item.split('.')[0] + '.bin')
     compressed_img  = cv2.imread(save_dir1 + item.split('.')[0] + '.png' , cv2.IMREAD_GRAYSCALE)
     original_img= cv2.imread(root_dir + item.split('.')[0] + '.png', cv2.IMREAD_GRAYSCALE)
 
